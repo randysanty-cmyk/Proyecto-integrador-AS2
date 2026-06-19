@@ -1,3 +1,4 @@
-CasoUsoGeneral.png
-CasoUsoVentas.png
-CasoUsoInventario.png
+Diagramas/
+├── CasoUsoGeneral.png
+├── CasoUsoVentas.png
+└── CasoUsoInventario.png
