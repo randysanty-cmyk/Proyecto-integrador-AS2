@@ -1,1 +1,3 @@
-guardar diagrama
+CasoUsoGeneral.png
+CasoUsoVentas.png
+CasoUsoInventario.png
