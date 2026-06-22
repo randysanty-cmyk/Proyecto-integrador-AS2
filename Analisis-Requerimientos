@@ -132,3 +132,59 @@ Prioridad: Media
 HU-10 - Seguimiento de recetas activas
 Como regente farmaceutico, quiero ver las recetas activas de un cliente y su estado, para hacerle seguimiento al tratamiento y evitar que se dispense dos veces el mismo medicamento.
 Prioridad: Alta
+
+
+6. CRITERIOS DE ACEPTACION
+
+HU-01 - Registro de entrada de productos
+- el formulario incluye todos los campos obligatorios: nombre, codigo, cantidad, precio, proveedor, fecha de ingreso y fecha de vencimiento.
+- el sistema no permite guardar si falta algun campo y muestra un aviso claro.
+- al guardar, el stock sube en la cantidad ingresada y el movimiento queda en el historial con fecha, hora y usuario.
+- si el producto ya existe, el stock se suma al registro existente en lugar de crear uno nuevo.
+
+HU-02 - Alertas de stock minimo
+- el administrador puede definir el nivel minimo de stock por producto.
+- cuando el stock baja del minimo, aparece una notificacion visible en el panel del sistema.
+- la alerta muestra el nombre del producto, el stock actual y el nivel minimo configurado.
+- la alerta desaparece cuando el stock vuelve a superar el nivel minimo.
+
+HU-03 - Alertas de vencimiento
+- el sistema permite filtrar productos que vencen en 30, 60 o 90 dias.
+- el listado muestra nombre del producto, fecha de vencimiento y cantidad disponible.
+- los productos ya vencidos aparecen separados y con alguna distincion visual.
+
+HU-04 - Consulta de inventario
+- la busqueda funciona con nombre parcial o codigo completo y muestra resultados en menos de 2 segundos.
+- el resultado incluye nombre, codigo, stock actual y precio de venta.
+- si el producto no existe, el sistema muestra el mensaje "Producto no encontrado".
+
+HU-05 - Registro de venta
+- el cajero puede agregar productos por nombre o codigo con cantidad editable.
+- el sistema calcula automaticamente subtotal, impuestos y total.
+- al confirmar, el stock de cada producto vendido se descuenta del inventario.
+- si un producto tiene stock cero, el sistema no permite agregarlo y muestra un aviso.
+
+HU-06 - Validacion de recetas medicas
+- solo el Regente Farmaceutico puede validar o rechazar una receta.
+- los medicamentos que requieren receta no pueden despacharse sin una receta validada.
+- al rechazar una receta, el sistema pide el motivo y lo guarda en el registro.
+
+HU-07 - Emision de comprobante de venta
+- al confirmar la venta, el sistema genera el comprobante con nombre del negocio, fecha, hora, productos, precios, impuestos, total y metodo de pago.
+- el comprobante se puede imprimir o enviar por correo si el cliente lo pide.
+- el formato cumple con los campos que exige el Ministerio de Hacienda.
+
+HU-08 - Reporte de ventas
+- se puede elegir entre reporte diario, semanal, mensual o por rango de fechas.
+- el reporte muestra total de ventas, productos mas vendidos, ingresos por metodo de pago y numero de transacciones.
+- solo los roles de Administrador y Regente pueden ver los reportes.
+
+HU-09 - Consulta del historial de compras
+- la busqueda por nombre o cedula muestra resultados en menos de 3 segundos.
+- el historial muestra cada compra con fecha, productos, cantidades, montos y numero de comprobante.
+- si el cliente no tiene compras, el sistema muestra el mensaje "Sin historial de compras".
+
+HU-10 - Seguimiento de recetas activas
+- el perfil del cliente muestra todas sus recetas con su estado: activa, completada o vencida.
+- el sistema marca automaticamente una receta como vencida si paso su fecha de validez.
+- solo el Regente puede cambiar el estado de una receta a completada.
