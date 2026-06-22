@@ -71,3 +71,17 @@ Modulo de Gestion de Clientes
 - RNF-10 Cumplimiento legal: los comprobantes deben cumplir con los requisitos del Ministerio de Hacienda.
 - RNF-11 Escalabilidad: debe soportar al menos 5 usuarios al mismo tiempo sin problemas de rendimiento.
 - RNF-12 Integridad: no debe permitir ventas de productos sin stock ni medicamentos sin receta validada.
+
+
+4. EVALUACION DE RIESGOS
+
+- R-01: resistencia del personal al cambio de lo manual a lo digital. Probabilidad alta, impacto alto. Mitigacion: capacitacion practica antes del lanzamiento e interfaz sencilla.
+- R-02: perdida de datos por fallo electrico o de hardware. Probabilidad media, impacto alto. Mitigacion: respaldos automaticos diarios y uso de UPS en equipos criticos.
+- R-03: errores humanos al ingresar datos al inventario. Probabilidad alta, impacto medio. Mitigacion: validaciones en tiempo real e historial para corregir movimientos.
+- R-04: dispensar medicamentos sin receta valida. Probabilidad baja, impacto muy alto. Mitigacion: el sistema bloquea la venta si no hay receta validada por el Regente.
+- R-05: falta de conexion a internet por estar fuera del GAM. Probabilidad media, impacto alto. Mitigacion: operacion basica sin conexion y sincronizacion al recuperarla.
+- R-06: el alcance crece durante el analisis. Probabilidad media, impacto medio. Mitigacion: documentar limites del alcance y requerir aprobacion para cualquier cambio.
+- R-07: subestimacion del esfuerzo en las estimaciones. Probabilidad media, impacto medio. Mitigacion: usar Planning Poker con varias rondas y agregar un margen del 15 al 20%.
+- R-08: acceso no autorizado a datos de clientes. Probabilidad baja, impacto alto. Mitigacion: autenticacion obligatoria, roles con permisos minimos y sesiones con expiracion automatica.
+
+
