@@ -1,94 +1,73 @@
-# Analisis de Requerimientos — Sistema Web de Gestion Integral
-## Sucursal Farmacias La Bomba (fuera del GAM)
-**Curso:** Analisis de Sistemas II — Universidad Politecnica Internacional  
-**Proyecto Integrador**
+Analisis de Requerimientos - Sistema Web de Gestion Integral
+Sucursal Farmacias La Bomba (fuera del GAM)
+Curso: Analisis de Sistemas II - Universidad Politecnica Internacional
+Proyecto Integrador
 
----
 
-## 1. Stakeholders
+1. STAKEHOLDERS
 
-Los stakeholders son todas las personas o grupos que se ven afectados directa o indirectamente por el sistema propuesto.
+Stakeholders Internos
 
-### Stakeholders Internos
+- Administrador / Gerente de Tienda: usuario administrador principal, le interesa tener visibilidad total de las operaciones y reportes.
+- Regente Farmaceutico: valida recetas y supervisa la dispensacion, le interesa el cumplimiento legal y la trazabilidad.
+- Dependientes de Farmacia: usan el sistema para ventas e inventario, les interesa que sea agil y facil de consultar.
+- Cajeros: usan el modulo de facturacion, les interesa emitir comprobantes rapido y sin errores.
+- Personal de Bodega: registran entradas y salidas de productos, les interesa que el proceso sea sencillo.
 
-| Stakeholder | Rol en el sistema | Interes principal |
-|---|---|---|
-| Administrador / Gerente de Tienda | Usuario administrador principal | Visibilidad total de operaciones, reportes y control de personal |
-| Regente Farmaceutico | Validador de recetas y supervisor de dispensacion | Cumplimiento legal, trazabilidad de recetas y medicamentos controlados |
-| Dependientes de Farmacia | Usuarios operativos de ventas e inventario | Agilidad en el registro de ventas y consulta de stock |
-| Cajeros | Usuarios del modulo de facturacion | Emision rapida y correcta de comprobantes |
-| Personal de Bodega / Recepcion | Usuarios del modulo de inventario | Registro eficiente de entradas y salidas de productos |
+Stakeholders Externos
 
-### Stakeholders Externos
+- Clientes: quieren atencion rapida, acceso a su historial y seguimiento de sus recetas.
+- Proveedores y Droguerias: necesitan que los pedidos sean claros y oportunos.
+- Ministerio de Salud: requiere cumplimiento en dispensacion y almacenamiento de medicamentos.
+- Colegio de Farmaceuticos de CR: exige que el Regente supervise activamente la dispensacion.
+- Ministerio de Hacienda: requiere que los comprobantes cumplan con facturacion electronica.
+- Direccion Corporativa Cuestamoras Salud: podria requerir visibilidad futura o integracion con SAP.
 
-| Stakeholder | Interes principal |
-|---|---|
-| Clientes de la farmacia | Atencion agil, historial de compras accesible, seguimiento de recetas |
-| Proveedores / Droguerias | Ordenes de compra claras y oportunas derivadas del control de stock |
-| Ministerio de Salud | Cumplimiento en dispensacion y almacenamiento de medicamentos regulados |
-| Colegio de Farmaceuticos de CR | Evidencia de supervision activa del Regente en recetas y dispensacion |
-| Ministerio de Hacienda | Generacion correcta de comprobantes electronicos |
-| Direccion Corporativa (Cuestamoras Salud) | Eventual visibilidad o integracion futura con SAP corporativo |
 
----
+2. REQUERIMIENTOS FUNCIONALES
 
-## 2. Requerimientos Funcionales
+Modulo de Inventario
 
-Los requerimientos funcionales definen que debe hacer el sistema.
+- RF-01: el sistema debe permitir registrar el ingreso de productos con nombre, codigo, cantidad, precio, proveedor, fecha de ingreso y fecha de vencimiento.
+- RF-02: el sistema debe registrar salidas de productos por venta, devolucion, vencimiento o ajuste manual.
+- RF-03: el sistema debe generar alertas cuando un producto este proximo a vencer.
+- RF-04: el sistema debe generar alertas cuando el stock de un producto baje del nivel minimo configurado.
+- RF-05: el sistema debe permitir configurar el nivel minimo de stock por producto.
+- RF-06: el sistema debe mostrar un reporte de productos proximos a vencer, filtrable por 30, 60 o 90 dias.
+- RF-07: el sistema debe permitir buscar productos por nombre, codigo o categoria.
+- RF-08: el sistema debe llevar un historial de movimientos de inventario con fecha, hora y usuario responsable.
 
-### Modulo de Inventario
+Modulo de Ventas y Facturacion
 
-| ID | Requerimiento |
-|---|---|
-| RF-01 | El sistema debe permitir registrar el ingreso de productos al inventario, incluyendo nombre, codigo, cantidad, precio de costo, proveedor, fecha de ingreso y fecha de vencimiento. |
-| RF-02 | El sistema debe registrar las salidas de productos del inventario, ya sea por venta, devolucion, vencimiento o ajuste manual. |
-| RF-03 | El sistema debe generar alertas automaticas cuando un producto alcance su fecha de vencimiento. |
-| RF-04 | El sistema debe generar alertas automaticas cuando el stock de un producto caiga por debajo del nivel minimo configurado. |
-| RF-05 | El sistema debe permitir configurar el nivel minimo de stock por producto. |
-| RF-06 | El sistema debe mostrar un reporte de productos proximos a vencer (configurable por dias: 30, 60, 90 dias). |
-| RF-07 | El sistema debe permitir la busqueda y consulta de productos por nombre, codigo o categoria. |
-| RF-08 | El sistema debe llevar un historial de movimientos de inventario con fecha, hora y usuario responsable. |
+- RF-09: el sistema debe permitir registrar una venta con productos, cantidades y metodo de pago (efectivo, tarjeta, SINPE).
+- RF-10: el sistema debe descontar automaticamente del inventario los productos vendidos al confirmar la venta.
+- RF-11: el sistema debe permitir adjuntar recetas medicas a una venta, indicando medico emisor y medicamento prescrito.
+- RF-12: el sistema debe permitir al Regente validar o rechazar una receta antes de autorizar la dispensacion.
+- RF-13: el sistema debe emitir un comprobante con nombre del producto, precio, impuesto, total y datos del negocio.
+- RF-14: el sistema debe permitir aplicar descuentos autorizados a una venta.
+- RF-15: el sistema debe permitir procesar devoluciones con reversion automatica al inventario.
+- RF-16: el sistema debe generar reportes de ventas diarios, semanales y mensuales.
 
-### Modulo de Ventas y Facturacion
+Modulo de Gestion de Clientes
 
-| ID | Requerimiento |
-|---|---|
-| RF-09 | El sistema debe permitir registrar una venta seleccionando los productos, cantidades y el metodo de pago (efectivo, tarjeta, SINPE). |
-| RF-10 | El sistema debe descontar automaticamente del inventario los productos vendidos al confirmar una venta. |
-| RF-11 | El sistema debe permitir registrar y adjuntar recetas medicas a una venta, indicando medico emisor y medicamento prescrito. |
-| RF-12 | El sistema debe permitir al Regente Farmaceutico validar o rechazar una receta medica antes de autorizar la dispensacion. |
-| RF-13 | El sistema debe emitir un comprobante de venta con los datos del producto, precio, impuesto, total y datos del establecimiento. |
-| RF-14 | El sistema debe permitir aplicar descuentos autorizados a nivel de producto o venta total. |
-| RF-15 | El sistema debe permitir procesar devoluciones de productos con revesion automatica al inventario. |
-| RF-16 | El sistema debe generar reportes diarios, semanales y mensuales de ventas por monto, producto y metodo de pago. |
+- RF-17: el sistema debe permitir registrar clientes con nombre, cedula, telefono y correo.
+- RF-18: el sistema debe mostrar el historial de compras de un cliente con fecha, productos y montos.
+- RF-19: el sistema debe registrar las recetas de un cliente y su estado (activa, completada, vencida).
+- RF-20: el sistema debe permitir agregar notas de atencion al cliente como alergias o medicamentos cronicos.
+- RF-21: el sistema debe permitir buscar un cliente por nombre o cedula.
 
-### Modulo de Gestion de Clientes
 
-| ID | Requerimiento |
-|---|---|
-| RF-17 | El sistema debe permitir registrar clientes con nombre, cedula, telefono y correo electronico. |
-| RF-18 | El sistema debe mostrar el historial completo de compras de un cliente, con fecha, productos adquiridos y montos. |
-| RF-19 | El sistema debe registrar las recetas medicas asociadas a un cliente y el estado de cada una (activa, completada, vencida). |
-| RF-20 | El sistema debe permitir agregar notas de atencion al cliente como alergias conocidas o medicamentos cronicos. |
-| RF-21 | El sistema debe permitir consultar el historial de un cliente por nombre o numero de cedula. |
+3. REQUERIMIENTOS NO FUNCIONALES
 
----
-
-## 3. Requerimientos No Funcionales
-
-Los requerimientos no funcionales definen bajo que condiciones debe operar el sistema.
-
-| ID | Categoria | Requerimiento |
-|---|---|---|
-| RNF-01 | Rendimiento | El sistema debe responder a cualquier consulta o transaccion en un tiempo maximo de 3 segundos bajo condiciones normales de uso. |
-| RNF-02 | Disponibilidad | El sistema debe estar disponible al menos el 99% del tiempo durante el horario de operacion de la farmacia (6:00 a.m. – 10:00 p.m.). |
-| RNF-03 | Seguridad | El sistema debe requerir autenticacion de usuario para acceder a cualquier modulo. |
-| RNF-04 | Seguridad | El sistema debe implementar roles y permisos diferenciados: Administrador, Regente, Dependiente, Cajero. |
-| RNF-05 | Seguridad | El sistema debe registrar un log de auditoria de todas las acciones criticas. |
-| RNF-06 | Usabilidad | La interfaz debe ser intuitiva; el flujo de una venta estandar no debe requerir mas de 5 pasos. |
-| RNF-07 | Usabilidad | El sistema debe funcionar correctamente en navegadores web modernos desde computadoras de escritorio o tablets. |
-| RNF-08 | Mantenibilidad | El codigo debe estar organizado de forma modular para facilitar futuras actualizaciones sin afectar los demas modulos. |
-| RNF-09 | Portabilidad | El sistema debe ser desplegable en un servidor local o en la nube, sin dependencia de un sistema operativo especifico. |
-| RNF-10 | Cumplimiento legal | El formato de los comprobantes de venta debe cumplir con los lineamientos de facturacion electronica del Ministerio de Hacienda de Costa Rica. |
-| RNF-11 | Escalabilidad | El sistema debe soportar hasta 5 usuarios simultaneos sin degradacion de rendimiento. |
-| RNF-12 | Integridad de datos | El sistema debe impedir registrar ventas de productos con stock cero o con receta no validada por el Regente. |
+- RNF-01 Rendimiento: el sistema debe responder en un maximo de 3 segundos bajo uso normal.
+- RNF-02 Disponibilidad: debe estar disponible al menos el 99% del tiempo en el horario de operacion (6am a 10pm).
+- RNF-03 Seguridad: debe requerir usuario y contrasena para acceder a cualquier modulo.
+- RNF-04 Seguridad: debe manejar roles diferenciados: Administrador, Regente, Dependiente y Cajero.
+- RNF-05 Seguridad: debe registrar un historial de auditoria de todas las acciones criticas.
+- RNF-06 Usabilidad: el flujo de una venta no debe requerir mas de 5 pasos.
+- RNF-07 Usabilidad: debe funcionar en navegadores modernos desde computadoras o tablets.
+- RNF-08 Mantenibilidad: debe estar organizado por modulos para facilitar cambios futuros sin afectar el resto.
+- RNF-09 Portabilidad: debe poder instalarse en servidor local o en la nube.
+- RNF-10 Cumplimiento legal: los comprobantes deben cumplir con los requisitos del Ministerio de Hacienda.
+- RNF-11 Escalabilidad: debe soportar al menos 5 usuarios al mismo tiempo sin problemas de rendimiento.
+- RNF-12 Integridad: no debe permitir ventas de productos sin stock ni medicamentos sin receta validada.
