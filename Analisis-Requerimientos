@@ -85,3 +85,50 @@ Modulo de Gestion de Clientes
 - R-08: acceso no autorizado a datos de clientes. Probabilidad baja, impacto alto. Mitigacion: autenticacion obligatoria, roles con permisos minimos y sesiones con expiracion automatica.
 
 
+5. HISTORIAS DE USUARIO
+
+Modulo de Inventario
+
+HU-01 - Registro de entrada de productos
+Como personal de bodega, quiero registrar el ingreso de nuevos productos al inventario con todos sus datos, para mantener el stock actualizado y tener un registro de cada lote recibido.
+Prioridad: Alta
+
+HU-02 - Alertas de stock minimo
+Como administrador de tienda, quiero recibir una alerta cuando el stock de un producto baje del nivel minimo, para hacer el pedido al proveedor a tiempo y evitar quedarse sin el producto.
+Prioridad: Alta
+
+HU-03 - Alertas de vencimiento
+Como regente farmaceutico, quiero ver un listado de productos proximos a vencer en los proximos 30, 60 o 90 dias, para gestionar su retiro o devolucion al proveedor antes de que venzan.
+Prioridad: Alta
+
+HU-04 - Consulta de inventario
+Como dependiente de farmacia, quiero buscar un producto por nombre o codigo y ver el stock disponible, para darle informacion precisa al cliente sin tener que ir a la bodega.
+Prioridad: Media
+
+Modulo de Ventas y Facturacion
+
+HU-05 - Registro de venta
+Como cajero, quiero registrar una venta seleccionando productos, cantidades y metodo de pago, para completar la transaccion rapido y que el inventario se actualice solo.
+Prioridad: Alta
+
+HU-06 - Validacion de recetas medicas
+Como regente farmaceutico, quiero revisar y aprobar o rechazar las recetas que presentan los clientes, para asegurarme de que la dispensacion se hace correctamente y cumple con la ley.
+Prioridad: Alta
+
+HU-07 - Emision de comprobante de venta
+Como cajero, quiero que el sistema genere automaticamente un tiquete o factura al terminar cada venta, para entregarle al cliente un comprobante valido y cumplir con los requisitos de Hacienda.
+Prioridad: Alta
+
+HU-08 - Reporte de ventas
+Como administrador de tienda, quiero generar reportes de ventas diarios, semanales o mensuales, para saber como va el negocio y tomar decisiones sobre que productos pedir.
+Prioridad: Media
+
+Modulo de Gestion de Clientes
+
+HU-09 - Consulta del historial de compras
+Como dependiente de farmacia, quiero consultar el historial de compras de un cliente por nombre o cedula, para orientarlo sobre sus compras anteriores o verificar que medicamentos usa.
+Prioridad: Media
+
+HU-10 - Seguimiento de recetas activas
+Como regente farmaceutico, quiero ver las recetas activas de un cliente y su estado, para hacerle seguimiento al tratamiento y evitar que se dispense dos veces el mismo medicamento.
+Prioridad: Alta
